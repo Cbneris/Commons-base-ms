@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.dervmark.commons.service.CommonService;
 
-public class CommonServiceImpl<E, R extends JpaRepository<E, Long>> implements CommonService<E> {
+public class CommonServiceImpl<E, R extends JpaRepository<E, String>> implements CommonService<E> {
 
 	@Autowired
 	protected R repository;
@@ -19,7 +19,7 @@ public class CommonServiceImpl<E, R extends JpaRepository<E, Long>> implements C
 	}
 
 	@Override
-	public Optional<E> findById(Long id) {
+	public Optional<E> findById(String id) {
 		return repository.findById(id);
 	}
 
@@ -29,7 +29,7 @@ public class CommonServiceImpl<E, R extends JpaRepository<E, Long>> implements C
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(String id) {
 		repository.deleteById(id);
 	}
 

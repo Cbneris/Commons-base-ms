@@ -7,10 +7,10 @@ public interface CommonService<E> {
 	
 	public List<E> findAll();
 	
-	public Optional<E> findById(Long id);
+	public Optional<E> findById(String id);
 	
 	public E save(E entity);
 	
-	public void deleteById(Long id);
+	public void deleteById(String id);
 	
 }
