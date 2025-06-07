@@ -34,10 +34,10 @@ public class CommonController <E, S extends CommonService<E>>{
 	            .orElseGet(() -> ResponseBuilder.notFound("No se encontró entidad con id " + id));
 	}
 		
-	@PostMapping
+	@PostMapping("/guardar")
 	public ResponseEntity<?> guarda(@RequestBody E entity){
 		E saved = service.save(entity);
-        return ResponseBuilder.created("Entidad guardada exitosamente", saved);
+        return ResponseBuilder.created("Se ha guardado exitosamente", saved);
 	}
 	
 	@DeleteMapping("/{id}")
